@@ -5,3 +5,4 @@ week 1: 8/24/2018 - 8/30/2018
 week 2: 8/31/2018 - 9/6/2018
 	•	8/31/2018 - Attended lecture (course administrative tasks)
 	•	9/4/2018  - Set up future systems account (id: ckakara)
+	•	9/4/2018  - Obtained the Plagiarism Certificate	
