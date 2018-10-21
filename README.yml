@@ -12,13 +12,13 @@ technologies:
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/crunch.md
 
 paper:
-  - keyword: TBD
-    title: TBD
-    url: TBD
+  - keyword: Kafka
+    title: Processing Twitter Data Stream using Kafka
+    url: https://github.com/cloudmesh-community/fa18-523-53/tree/master/paper
     group: fa18-523-53
 project:
   - keyword: TBD
-    title: Real Time sentiment Analysis using Kafka
-    url: TBD
+    title: Twitter Vs Storm Alerts comparision using Kafka and Spark.
+    url: https://github.com/cloudmesh-community/fa18-523-53/tree/master/project-report
     group: fa18-523-53
-    code: TBD
+    code: https://github.com/cloudmesh-community/fa18-523-53/tree/master/project-report/project-code
