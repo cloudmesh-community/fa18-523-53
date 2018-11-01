@@ -4,13 +4,12 @@ owner:
   lastname: "Kakarala"
   hid: "fa18-523-53"
   community: "i523"
-
+  semester: fa18
 technologies:
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/google-chubby.md
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/pbdr.md
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/solr.md
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/crunch.md
-
 paper:
   - keyword: Kafka
     title: Processing Data Streams using Kafka
