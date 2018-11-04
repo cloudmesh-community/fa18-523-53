@@ -17,7 +17,7 @@ paper:
     group: fa18-523-53
 project:
   - keyword: TBD
-    title: Twitter Vs News comparision using Kafka and Spark.
+    title: Orchestrating Microservices Using Kafka.
     url: https://github.com/cloudmesh-community/fa18-523-53/tree/master/project-report
     group: fa18-523-53
     code: https://github.com/cloudmesh-community/fa18-523-53/tree/master/project-report/project-code
