@@ -35,6 +35,9 @@ A single kafka server is called as Broker. Each broker recieves messages from pr
 
 ![](images/kafkaBrokers.png)
 
+The major aspect of kafka is the data retention in the partitions. By default the messages in the partitions will be retained for a period of time or Size. For example, the messages in a topic can be retained for one week or until the partition reaches 1 GB. The default behaviour can be overridden for topics by changing their settings. Kafka also supports multiple clusters communicating across multiple data centers.
+
+
 ## Use Cases
 
 TBD
