@@ -40,11 +40,13 @@ The major aspect of kafka is the data retention in the partitions. By default th
 
 ## Use Cases
 
-TBD
+Kafka was primarily built in LinkedIn to optimize thier activity logging system that has multiple Microservices. When the user does an action from the frontend, messages streams through the kafka cluster which are then subscribed by the backend consumer process. Kafka is also used in organisations for collecting the logs and metrics from thier microservices. Since Kafka is analogous to the commit log in databases, it can be used to monitor the databases as an event occurs. Kafka is also used in the applications which are developed to process data in streams.
 
 ## Conclusion
 
-TBD
+Microservices contribute alot to the organizations especially the ones follow Agile methodology and it's very crucial to understand the data pipeline between these Microservices. Kafka helps in creating an efficient messaging sytem that helps Microservices interact with one another in a sophisticated manner. I conclude the paper with the below quote from LinkedIn CEO, Jeff Weiner
+
+``Data really powers everything that we do [Jeff Weiner, CEO LinkedIn].``
 
 ## Acknowledgements
 
