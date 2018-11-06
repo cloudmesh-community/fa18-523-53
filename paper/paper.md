@@ -24,7 +24,7 @@ The metric for data in Kafka is message. These messages are nothing but an array
 Messages in Kafka are classified into Topics. Topics are nothing but a group of partitions (Can also be described as disk space) where a collection of similar messages are stored. Messages will be appended to these partitions and will be read from beginning to end fashion. The Partitions can be hosted by different servers which makes the topic scale horizontally.
 Below figure describes 4 partitions of a single topic (Citation Needed)
 
-![]()
+![](/images/kafkaPartitions.png)
 
 ## Use Cases
 
