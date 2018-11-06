@@ -27,10 +27,13 @@ Below figure describes 4 partitions of a single topic (Citation Needed)
 
 ![](images/kafkaPartitions.png)
 
-There are basically two users of Kafka system. They are Producers and Consumers. Producers create messages to a specific topic. Producers are also termed as publishers. Producers by default doesnot care which partition they are writing the message to. However, in some cases the hash value of the key decided the partition and ensures all the messages for the same key reside in the same partition. Consumers read messages from the partitions in the order they were published by the producers. Consumers are also termed as subscribers. While reading the messages from partitions, consumers store the offset to to keep track of the read messages. By storing the offset, the system can be restrated from the point of failure without starting all over again. Consumers are bundled together as a consumer group that restricts a given partition to be read by a unique consumer. Below Figure illustrates on how consumer group works (Citation Needed)
+There are basically two users of Kafka system. They are Producers and Consumers. Producers create messages to a specific topic. Producers are also termed as publishers. Producers by default doesnot care which partition they are writing the message to. However, in some cases the hash value of the key decided the partition and ensures all the messages for the same key reside in the same partition. Consumers read messages from the partitions in the order they were published by the producers. Consumers are also termed as subscribers. While reading the messages from partitions, consumers store the offset to to keep track of the read messages. By storing the offset, the system can be restrated from the point of failure without starting all over again. Consumers are bundled together as a consumer group that restricts a given partition to be read by a unique consumer. Consumer groups helps scaling the consumers horizontally. Below Figure illustrates on how consumer group works (Citation Needed)
 
-![] (/images/kafkaConsumerGroup.png)
+![](images/kafkaConsumerGroup.png)
 
+A single kafka server is called as Broker. Each broker recieves messages from producers and write them to the partitions on the disk. They will then save the offset for each message in a partition They also respond to the consumer programs for data requests from partitions and commit the same. Kafka is designed to have multiple brokers and collection of all of them is termed as a Kafka cluster. Each cluster can have multiple brokers where the leader boker replicates the data to others. Replication of data helps in durability of data even when one of the broker failed working. The below diagram explains how multiple brokers are replicated in a kafka cluster.
+
+![](images/kafkaBroker.png)
 
 ## Use Cases
 
