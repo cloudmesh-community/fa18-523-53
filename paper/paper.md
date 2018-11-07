@@ -4,7 +4,7 @@
 | ckakara@iu.edu
 | Indiana University
 | hid: fa18-523-53
-| github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-53/tree/master/paper)
+| github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-53/blob/master/paper/paper.md)
 
 ---
 
@@ -13,6 +13,8 @@ Keywords: fa18-523-53, Microservices, Kafka, Python
 ---
 
 ## Introduction
+
+:o: refernces missing in some sections
 
 :o: please start your section with kafka 
 
@@ -50,7 +52,3 @@ Microservices contribute a lot to the organizations especially the ones follow A
 
 ``Data really powers everything that we do [Jeff Weiner, CEO LinkedIn].``
 
-## Acknowledgements
-
-The author would like to thank Professor Gregor Von Laszewski for providing this opportunity to work on this paper summary.
-The author would also like to thank the Associate Instructors of the class for their continuos help in resolving issues.
