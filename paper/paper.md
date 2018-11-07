@@ -52,3 +52,4 @@ Microservices contribute a lot to the organizations especially the ones follow A
 
 ``Data really powers everything that we do [Jeff Weiner, CEO LinkedIn].``
 
+:o: stay focused on kafka not on the linked in CEO
