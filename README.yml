@@ -13,11 +13,11 @@ technologies:
 paper:
   - keyword: Microservices, Kafka
     title: Microservices and Kafka
-    url: https://github.com/cloudmesh-community/fa18-523-53/tree/master/paper
+    url: https://github.com/cloudmesh-community/fa18-523-53/tree/master/paper/paper.md
     group: fa18-523-53
 project:
   - keyword: TBD
     title: Orchestrating Microservices for Credit Scoring Application using Kafka.
-    url: https://github.com/cloudmesh-community/fa18-523-53/tree/master/project-report
+    url: https://github.com/cloudmesh-community/fa18-523-53/tree/master/project-report/report.md
     group: fa18-523-53
     code: https://github.com/cloudmesh-community/fa18-523-53/tree/master/project-report/project-code
