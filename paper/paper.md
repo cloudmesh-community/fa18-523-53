@@ -14,6 +14,8 @@ Keywords: fa18-523-53, Microservices, Kafka, Python
 
 ## Introduction
 
+:o: images are not properly used and have no labels, see our sample
+
 :o: refernces missing in some sections
 
 :o: please start your section with kafka 
