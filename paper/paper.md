@@ -33,7 +33,7 @@ Messages in Kafka are classified into Topics. Topics are nothing but a group of 
 All the partitions for a topic is often termed as Stream
 Below figure describes 4 partitions of a single topic (Citation Needed)
 
-![](images/kafkaPartitions.png)
+![:o: CAPTION AND LABEL MISSING REF IN TEXT MISSING IF COPIED CITE MISSING](images/kafkaPartitions.png)
 
 There are basically two users of Kafka system. They are Producers and Consumers. Producers create messages to a specific topic. Producers are also termed as publishers. Producers by default does not care which partition they are writing the message to. However, in some cases the hash value of the key decided the partition and ensures all the messages for the same key reside in the same partition. Consumers read messages from the partitions in the order they were published by the producers. Consumers are also termed as subscribers. While reading the messages from partitions, consumers store the offset to to keep track of the read messages. By storing the offset, the system can be re-strated from the point of failure without starting all over again. Consumers are bundled together as a consumer group that restricts a given partition to be read by a unique consumer. Consumer groups helps scaling the consumers horizontally. Below Figure illustrates on how consumer group works (Citation Needed)
 
