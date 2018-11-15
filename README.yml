@@ -5,6 +5,7 @@ owner:
   hid: "fa18-523-53"
   community: "i523"
   semester: fa18
+  Profile: https://github.com/cloudmesh-community/fa18-523-53
 technologies:
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/google-chubby.md
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/pbdr.md
@@ -16,7 +17,7 @@ paper:
     url: https://github.com/cloudmesh-community/fa18-523-53/tree/master/paper/paper.md
     group: fa18-523-53
 project:
-  - keyword: TBD
+  - keyword: Microservices, Kafka, Zookeper
     title: Orchestrating Microservices for Credit Scoring Application using Kafka.
     url: https://github.com/cloudmesh-community/fa18-523-53/tree/master/project-report/report.md
     group: fa18-523-53
