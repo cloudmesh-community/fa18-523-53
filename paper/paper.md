@@ -1,4 +1,4 @@
-# Microservices and Kafka :hand: fa18-523-53
+# Microservices and Kafka :o: fa18-523-53
 
 | Chaitanya Kakarala
 | ckakara@iu.edu
@@ -56,8 +56,5 @@ Kafka was primarily built in LinkedIn to optimize their activity logging system 
 
 ## Conclusion
 
-Microservices contribute a lot to the organizations especially the ones follow Agile methodology and it's very crucial to understand the data pipeline between these Microservices. Kafka helps in creating an efficient messaging system that helps Microservices interact with one another in a sophisticated manner. I conclude the paper with the below quote from LinkedIn CEO, Jeff Weiner
+Microservices contribute a lot to the organizations especially the ones follow Agile methodology and it's very crucial to understand the data pipeline between these Microservices. Kafka helps in creating an efficient messaging system that helps Microservices interact with one another in a sophisticated manner. 
 
-``Data really powers everything that we do [Jeff Weiner, CEO LinkedIn].``
-
-:o: stay focused on kafka not on the linked in CEO
