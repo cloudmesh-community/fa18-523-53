@@ -1,4 +1,4 @@
-# Orchestarting Microservices for a Credit Scoring Application in Kafka :o: fa18-523-53
+# Orchestrating Microservices for a Credit Scoring Application in Kafka  :o:  fa18-523-53
 
 | Chaitanya Kakarala
 | ckakara@iu.edu
@@ -119,6 +119,38 @@ A credit database file in csv format is created for this project. Below are the 
 * MISSED PAYMENTS : Number of missed payments by this person from the date of credit establishment.
 
 ## Implementation
+
+* Kafka Installation: 
+  * Kafka tar file can be obtained from [here](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz). Please download and save it on the server. Please be aware that kafka requires Java to be installed on the server.
+  * Untar the downloaded file using below commands
+  ```
+  tar -xzf kafka_2.11-1.1.0.tgz
+  ```
+*  If the java version in your server is having a LTS (Long Time Support) then below fix is needed in kafka-run-class.sh located in bin folder under the kafka home directory. This is a known fix and kafka is working to address this issue for future releases.
+
+Change below line
+```
+JAVA_MAJOR_VERSION=$($JAVA -version 2>&1 | sed -E -n 's/.* version “([^.-]*).*”/\1/p’)
+```
+to
+```
+JAVA_MAJOR_VERSION=$($JAVA -version 2>&1 | sed -E -n 's/.* version "([^.-]*).*/\1/p')
+```
+* install below libraries of python
+  * json
+  * csv
+  * os
+  * re
+  * kafka
+  * tkinter
+
+A python library can be installed using pip install commands. Here is the example command line to install kafka library
+```
+pip install kafka
+```
+
+* 
+  
 
 ## Benchmark
 
