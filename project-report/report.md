@@ -173,18 +173,14 @@ bin/kafka-server-start.sh config/server.properties
 ./scoringUI.py
 ```
 
-This command opens a user interface to key in the personal identification information. Provide the details and hit "Check your Score" button. If the SSN provided in the user input doesnot found in 'creditDatabase.csv' then you will see a "Credit Record Not Found" exception. If not, below user interface will be opened with the credit information.
+This command opens a user interface to key in the personal identification information. Provide the details and hit "Check your Score" button. If the SSN provided in the user input does not found in 'creditDatabase.csv' then you will see a "Credit Record Not Found" exception. If not, below user interface will be opened with the credit information.
 
 <figure>
-  
- 
 
-## Benchmark
 
 ## Conclusion
 
+This project successfully demonstrates the orchestration of microservices using a kafka cluster. The four microservices created in python as part of this credit scoring application interacts with one another using kafka cluster. The project also successfully demonstrates the persistence of data in a kafka cluster for the consumers to request.
+
 ## Acknowledgement
-
-## Workbreakdown
-
-Only needed if you work in a group.
+The author would like to thank Professor Gregor von Laszewski and associate instructors for their help and guidance.
