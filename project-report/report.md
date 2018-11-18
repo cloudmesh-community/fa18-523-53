@@ -149,8 +149,35 @@ A python library can be installed using pip install commands. Here is the exampl
 pip install kafka
 ```
 
-* 
+* Start the zookeeper server using the below command. You need to be in kafka home directory to be able to successfully execute the below command.
+```
+bin/zookeeper-server-start.sh config/zookeeper.properties
+```
+
+* Start the Kafka server using the below command. You need to be in kafka home directory to be able to successfully execute the below command.
+```
+bin/kafka-server-start.sh config/server.properties
+```
+* Execute below services in different instances
+  * nameParsingMicroService.py
+  * addressParsingMicroService.py
+  * scoringMicroService.py
+```
+./nameParsingMicroService.py
+./addressParsingMicroService.py
+./scoringMicroService.py
+```
+
+* Execute the UI service
+```
+./scoringUI.py
+```
+
+This command opens a user interface to key in the personal identification information. Provide the details and hit "Check your Score" button. If the SSN provided in the user input doesnot found in 'creditDatabase.csv' then you will see a "Credit Record Not Found" exception. If not, below user interface will be opened with the credit information.
+
+<figure>
   
+ 
 
 ## Benchmark
 
