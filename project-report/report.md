@@ -2,7 +2,7 @@
 
 | Chaitanya Kakarala
 | ckakara@iu.edu
-| Indiana University, Example University
+| Indiana University
 | hid: fa18-523-53
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-53/project-report/report.md)
 | code: [:cloud:](https://github.com/cloudmesh-community/fa18-523-53/project-code)
@@ -33,25 +33,44 @@ A single kafka server is called as kafka broker. Each broker receives messages f
 
 ## Requirements
 
-All images must be referred to in the text. The words bellow and above
-must not be used in your paper for images, tables, and code.
+A Credit reporting agency would like to create an application to help their customers in finding their credit scores and the factors influence their score. In order to provide the above information, the application require the below personal identification information from their customers. They are:
 
-+@fig:fromonetotheorther shows a nice figure exported from Powerpoint
-to png. If you like you can use this as a basis for your drawings.
+1. Name Salutation (Optional),
+2. First name,
+3. Middle Name (Optional),
+4. Last name,
+5. Name Suffix (Optional),
+6. Address Line 1,
+7. Address Line 2 (Optional),
+8. City,
+9. State,
+10. Zip Code,
+11. SSN.
 
-![A simple flow chart](images/from-one-to-the-other.png){#fig:fromonetotheorther}
+Upon collecting the above information from the user, the below rules need to be applied to cleanse and standardize the user input.
 
-Figures must not be cited with an explicit number, but automated
-numbering must be used. Here is how we did it for this paper:
+1. None of the name related information should contain any integers in them. They should be only characters.
+2. Address lines should be standardized such as Lane to Ln and Circle to Cir.
+3. City and State should be characters.
+4. Zip code has to be integer.
+5. SSN should be a 9 digit integer.
 
-```
-+@fig:fromonetotheorther shows a nice
-figure exported from Powerpoint to png.
-If you like you can use this as a basis
-for your drawings.
+After cleansing and standardizing the user input, below logic has to be applied for determining the score.
 
-![A simple flow chart](images/from-one-to-the-other.png){#fig:fromonetotheorther}
-```
+1. The maximum score one can get is 850
+2. 10 point reduction should be applied for every credit inquiry
+3. Existence of a public record should result 200 point reduction
+4. Every missed payment will result in 100 point reduction
+5. If the available credit to total debt ratio is less than 10%, there will not be any reduction in score
+6. If the available credit to total debt ratio is between 10% to 20% , there will  be 20 point reduction in score
+7. If the available credit to total debt ratio is between 20% to 30% , there will  be 30 point reduction in score
+8. If the available credit to total debt ratio is between 30% to 40% , there will  be 40 point reduction in score
+9. If the available credit to total debt ratio is between 40% to 50% , there will  be 50 point reduction in score
+10. If the available credit to total debt ratio is greater than 50% , there will  be 100 point reduction in score
+11. The minimum score that one can get is 350.
+
+The application has to designed in such a way that the code can be packaged and implemented in any machine. The services has to be light weighted and autonomous in nature. In case of any issue with the code the user inputs must be guarded and the application should start from the last point of failure. An efficient logging mechanism should be in place for supporting the application.
+
 
 ## Design 
 
