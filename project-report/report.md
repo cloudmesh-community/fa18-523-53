@@ -41,39 +41,39 @@ A single kafka server is called as kafka broker. Each broker receives messages f
 
 A Credit reporting agency would like to create an application to help their customers in finding their credit scores and the factors influence their score. In order to provide the above information, the application require the below personal identification information from their customers. They are:
 
-1. Name Salutation (Optional),
-2. First name,
-3. Middle Name (Optional),
-4. Last name,
-5. Name Suffix (Optional),
-6. Address Line 1,
-7. Address Line 2 (Optional),
-8. City,
-9. State,
-10. Zip Code,
-11. SSN.
+* Name Salutation (Optional),
+* First name,
+* Middle Name (Optional),
+* Last name,
+* Name Suffix (Optional),
+* Address Line 1,
+* Address Line 2 (Optional),
+* City,
+* State,
+* Zip Code,
+* SSN.
 
 Upon collecting the above information from the user, the below rules need to be applied to cleanse and standardize the user input.
 
-1. None of the name related information should contain any integers in them. They should be only characters.
-2. Address lines should be standardized such as Lane to Ln and Circle to Cir.
-3. City and State should be characters.
-4. Zip code has to be integer.
-5. SSN should be a 9 digit integer.
+* None of the name related information should contain any integers in them. They should be only characters.
+* Address lines should be standardized such as Lane to Ln and Circle to Cir.
+* City and State should be characters.
+* Zip code has to be integer.
+* SSN should be a 9 digit integer.
 
 After cleansing and standardizing the user input, below logic has to be applied for determining the score.
 
-1. The maximum score one can get is 850
-2. 10 point reduction should be applied for every credit inquiry
-3. Existence of a public record should result 200 point reduction
-4. Every missed payment will result in 100 point reduction
-5. If the available credit to total debt ratio is less than 10%, there will not be any reduction in score
-6. If the available credit to total debt ratio is between 10% to 20% , there will  be 20 point reduction in score
-7. If the available credit to total debt ratio is between 20% to 30% , there will  be 30 point reduction in score
-8. If the available credit to total debt ratio is between 30% to 40% , there will  be 40 point reduction in score
-9. If the available credit to total debt ratio is between 40% to 50% , there will  be 50 point reduction in score
-10. If the available credit to total debt ratio is greater than 50% , there will  be 100 point reduction in score
-11. The minimum score that one can get is 350.
+* The maximum score one can get is 850
+* 10 point reduction should be applied for every credit inquiry
+* Existence of a public record should result 200 point reduction
+* Every missed payment will result in 100 point reduction
+* If the available credit to total debt ratio is less than 10%, there will not be any reduction in score
+* If the available credit to total debt ratio is between 10% to 20% , there will  be 20 point reduction in score
+* If the available credit to total debt ratio is between 20% to 30% , there will  be 30 point reduction in score
+* If the available credit to total debt ratio is between 30% to 40% , there will  be 40 point reduction in score
+* If the available credit to total debt ratio is between 40% to 50% , there will  be 50 point reduction in score
+* If the available credit to total debt ratio is greater than 50% , there will  be 100 point reduction in score
+* The minimum score that one can get is 350.
 
 The application has to designed in such a way that the code can be packaged and implemented in any machine. The services has to be light weighted and autonomous in nature. In case of any issue with the code the user inputs must be guarded and the application should start from the last point of failure. An efficient logging mechanism should be in place for supporting the application.
 
@@ -82,11 +82,11 @@ The application has to designed in such a way that the code can be packaged and 
 
 The application is designed using below technologies:
 
-1. Kafka: Kafka is used as a message streaming tool for establishing a data pipeline between multiple microservices.
+* Kafka: Kafka is used as a message streaming tool for establishing a data pipeline between multiple microservices.
 
-2. Python: Python is the programming language used for creating the microservices and kafka library are used to publish and subscribe messages to kafka clusters. Tkinter library is used for creating user interfaces.
+* Python: Python is the programming language used for creating the microservices and kafka library are used to publish and subscribe messages to kafka clusters. Tkinter library is used for creating user interfaces.
 
-3. Zookeeper: Zookeeper is used for maintaining a centralized configuration information by providing distributed synchronization and providing group services. Apache kafka uses zookeeper for maintaining the configurations.
+* Zookeeper: Zookeeper is used for maintaining a centralized configuration information by providing distributed synchronization and providing group services. Apache kafka uses zookeeper for maintaining the configurations.
 
 <Figure>
 
@@ -94,13 +94,13 @@ The application is designed using below technologies:
 
 An application is designed to have different services in python which interacts with one another using kafka streams. Below are the different microservices created as part of this application.
 
-1. scoringUI: This microservice launches a user interface for the user to input the personal identification information. The service reads each of the user inputs and create a JSON payload. The JSON payload created is sent to kafka partition under 'nameParsing' topic. The service is coded in python and using TKinter and Kafka libraries.
+* scoringUI: This microservice launches a user interface for the user to input the personal identification information. The service reads each of the user inputs and create a JSON payload. The JSON payload created is sent to kafka partition under 'nameParsing' topic. The service is coded in python and using TKinter and Kafka libraries.
 
-2. nameParsingMicroService: This microservice is a consumes the messages from 'nameParsing' topic and then parse the payload. The service also applies the parsing logic to clean all the name related fields. Upon cleansing the name fields, the service creates a payload with parsed name and all the address related fields. The payload is then sent to kafka partitions under 'addressParsing' topic.
+* nameParsingMicroService: This microservice is a consumes the messages from 'nameParsing' topic and then parse the payload. The service also applies the parsing logic to clean all the name related fields. Upon cleansing the name fields, the service creates a payload with parsed name and all the address related fields. The payload is then sent to kafka partitions under 'addressParsing' topic.
 
-3. addressParsingMicroService: This microservice consumes the messages from 'addressParsing' topic and applies parsing logic on the address related fields to define the parsed address. The service then creates a payload with parsed name and address to kafka partitions under 'scoring' topic.
+* addressParsingMicroService: This microservice consumes the messages from 'addressParsing' topic and applies parsing logic on the address related fields to define the parsed address. The service then creates a payload with parsed name and address to kafka partitions under 'scoring' topic.
 
-4. scoringMicroService: This microservice consumes the messages from 'scoring' topic from kafka cluster and applies scoring logic on the subject. This service reads the dataset called 'creditDatabase.csv' for obtaining the required attributes for a given SSN to calculate the score. The service then launches the user interface for the user to check his score and the factors contributing towards the same.
+* scoringMicroService: This microservice consumes the messages from 'scoring' topic from kafka cluster and applies scoring logic on the subject. This service reads the dataset called 'creditDatabase.csv' for obtaining the required attributes for a given SSN to calculate the score. The service then launches the user interface for the user to check his score and the factors contributing towards the same.
 
 <Figure>
   
@@ -110,13 +110,13 @@ Zookeeper saves the offsets of the messages consumed and produced to maintain th
 
 A credit database file in csv format is created for this project. Below are the attributes of the dataset.
 
-1. SSN : Key field that uniquely identifies a person
-2. ACTIVE SINCE : This is the date in YYYY-MM-DD format on which date the credit was established for the person
-3. INQUIRIES : Number of inquiries on the record in the past 3 years.
-4. CREDIT LIMIT : Total credit limit of the person across all his accounts.
-5. TOTAL BALANCE : Sum of all current balances reported by different financial institutions.
-6. PUBLIC RECORD : This attribute is set to "Y" if there are any public records listed for this person. Default Value is "N"
-7. MISSED PAYMENTS : Number of missed payments by this person from the date of credit establishment.
+* SSN : Key field that uniquely identifies a person
+* ACTIVE SINCE : This is the date in YYYY-MM-DD format on which date the credit was established for the person
+* INQUIRIES : Number of inquiries on the record in the past 3 years.
+* CREDIT LIMIT : Total credit limit of the person across all his accounts.
+* TOTAL BALANCE : Sum of all current balances reported by different financial institutions.
+* PUBLIC RECORD : This attribute is set to "Y" if there are any public records listed for this person. Default Value is "N"
+* MISSED PAYMENTS : Number of missed payments by this person from the date of credit establishment.
 
 ## Implementation
 
