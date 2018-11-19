@@ -43,6 +43,34 @@ A single kafka server is called as Broker. Each broker receives messages from pr
 
 The major aspect of kafka is the data retention in the partitions. By default the messages in the partitions will be retained for a period of time or Size. For example, the messages in a topic can be retained for one week or until the partition reaches 1 GB. The default behavior can be overridden for topics by changing their settings. Kafka also supports multiple clusters communicating across multiple data centers.
 
+## Installation and Starting Kafka
+
+* Kafka Installation: 
+  * Kafka tar file can be obtained from [here](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz). Please download and save it on the server. Please be aware that kafka requires Java to be installed on the server.
+  * Untar the downloaded file using below commands
+  ```
+  tar -xzf kafka_2.11-1.1.0.tgz
+  ```
+*  If the java version in your server is having a LTS (Long Time Support) then below fix is needed in kafka-run-class.sh located in bin folder under the kafka home directory. This is a known fix and kafka is working to address this issue for future releases.
+
+Change below line
+```
+JAVA_MAJOR_VERSION=$($JAVA -version 2>&1 | sed -E -n 's/.* version “([^.-]*).*”/\1/p’)
+```
+to
+```
+JAVA_MAJOR_VERSION=$($JAVA -version 2>&1 | sed -E -n 's/.* version "([^.-]*).*/\1/p')
+```
+
+* Start the zookeeper server using the below command. You need to be in kafka home directory to be able to successfully execute the below command.
+```
+bin/zookeeper-server-start.sh config/zookeeper.properties
+```
+
+* Start the Kafka server using the below command. You need to be in kafka home directory to be able to successfully execute the below command.
+```
+bin/kafka-server-start.sh config/server.properties
+```
 
 ## Use Cases
 
