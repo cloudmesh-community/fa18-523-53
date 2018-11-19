@@ -14,12 +14,11 @@ Keywords: fa18-523-53, Microservices, Kafka, Python
 
 ## Introduction
 
-:o: refernces missing in some sections
 
 :o: please start your section with kafka 
 
-With the increase in demand for Agile methodology (Citation Needed) in software development where the user stories should be completed in a given sprint (Citation Needed - Sprint Definition), there is great need of shrinking down the applications to smaller units. These smaller units are otherwise known as Microservices. These Microservices are loosely coupled and the instructions inside them are light weight. Microservices are autonomous by nature and they can be plugged in any host and bring them up provided the software and hardware requirements are met. As a result, small independent teams can work on these Microservices in parallel and deploy them independently. Depending on the complexity of an application there could be  hundreds of Microservices defined and each of them might interact with each other. In other words, an event occurred on one  Microservice could start another Microservice. With the interactions between these Microservices increasing, it's hard trace the connection between them and hence creating a technical debt to mitigate the issue.
-Apche Kafka is designed to solve the above stated problem. It is also known as "Distributed Streaming Platform" which works on a subscribe-publish model. Microservices communicate with each other through a Kafka cluster by either subscribing or publishing the topics rather than communicating directly. Kafka was originally designed in LinkedIn (Citation Needed) to address issue with one of their internal system. The Primary objectives of Kafka were to persist the message data so multiple consumers can access the same and provide horizontal scaling. 
+With the increase in demand for Agile methodology in software development where the user stories should be completed in a given sprint, there is great need of shrinking down the applications to smaller units. These smaller units are otherwise known as Microservices. These Microservices are loosely coupled and the instructions inside them are light weight. Microservices are autonomous by nature and they can be plugged in any host and bring them up provided the software and hardware requirements are met. As a result, small independent teams can work on these Microservices in parallel and deploy them independently. Depending on the complexity of an application there could be  hundreds of Microservices defined and each of them might interact with each other. In other words, an event occurred on one  Microservice could start another Microservice. With the interactions between these Microservices increasing, it's hard trace the connection between them and hence creating a technical debt to mitigate the issue.
+Apche Kafka is designed to solve the above stated problem. It is also known as "Distributed Streaming Platform" which works on a subscribe-publish model. Microservices communicate with each other through a Kafka cluster by either subscribing or publishing the topics rather than communicating directly. Kafka was originally designed in LinkedIn to address issue with one of their internal system. The Primary objectives of Kafka were to persist the message data so multiple consumers can access the same and provide horizontal scaling. 
 
 
 ## Architecture
@@ -79,3 +78,6 @@ Kafka was primarily built in LinkedIn to optimize their activity logging system 
 
 Microservices contribute a lot to the organizations especially the ones follow Agile methodology and it's very crucial to understand the data pipeline between these Microservices. Kafka helps in creating an efficient messaging system that helps Microservices interact with one another in a sophisticated manner. 
 
+## Acknowledgement
+
+The author would like to thank Professor Gregor von Laszewski and associate instructors for their help and guidance.
