@@ -90,7 +90,7 @@ The application is designed using below technologies:
 
 Figure 4 describes the high level Kafka Architecture
 
-
+![Figure 4. Kafka Architecture](images/kafkaArchitecture.png)
 
 ## Design
 
