@@ -88,7 +88,9 @@ The application is designed using below technologies:
 
 * Zookeeper: Zookeeper is used for maintaining a centralized configuration information by providing distributed synchronization and providing group services. Apache kafka uses zookeeper for maintaining the configurations.
 
-<Figure>
+Figure 4 describes the high level Kafka Architecture
+
+![Figure 4. Kafka Architecture](images/kafkaArchitecture.png)
 
 ## Design
 
