@@ -126,7 +126,7 @@ A credit database file in csv format is created for this project. Below are the 
   ```
   tar -xzf kafka_2.11-1.1.0.tgz
   ```
-*  If the java version in your server is having a LTS (Long Time Support) then below fix is needed in kafka-run-class.sh located in bin folder under the kafka home directory. This is a known fix and kafka is working to address this issue for future releases.
+*  If the java version in your server is having a LTS (Long Time Support) then below fix is needed in kafka-run-class.sh located in bin folder under the kafka home directory. This is a known fix and kafka is working to address this issue for future releases [@www-kafkaJavaIssue].
 
 Change below line
 ```
