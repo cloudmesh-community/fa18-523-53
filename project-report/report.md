@@ -16,7 +16,7 @@ Keywords: Kafka, Zookeeper, Microservices, Python.
 
 ## Abstract
 
-This Project deals with orchestration of micro services in a Credit Scoring application using a Kafka cluster. A user keys in his personal identification information in a user interface created in Python and upon submitting the same multiple micro services written in python will be executed. These light weighted and autonomous interact with one another using a Kafka broker Which works in a subscribe-publish model. The user will then see his credit report and the factors that impact his credit.
+This Project deals with orchestration of micro services in a Credit Scoring application using a Kafka cluster. A user keys in his personal identification information in a user interface created in Python and upon submitting the same multiple micro services written in python will be executed. These light weighted and autonomous services interact with one another using a Kafka broker which works in a subscribe-publish model. The user will then see his credit report and the factors that impact his credit.
 
 ## Introduction
 
@@ -25,15 +25,15 @@ With the increase in the amount of data being processed there is a great need of
 ## Apache Kafka
 
 Apache Kafka is an open source streaming platform that streams the data in the form of messages. The messages are nothing but a collection of bytes and kafka has nothing to do with the content of these messages. Each of these messages will be tagged with a topic name and these messages will be published into a partition (disk space) of the topic it is associated with. These partitions can be made available across different machines which makes kafka a horizontally scalable streaming platform.
-Optionally each of these messages can be given with a key and whose hash values determines the partition it should be saved in. Hence the messages with the same key value will be stacked together in the same partition.
+Optionally each of these messages can be given with a key and whose hash values determines the partition it should be saved in. Hence the messages with the same key value will be stacked together in the same partition. Figure 1 describes the representation of a kafka topic with multiple partitions.
 
 ![Figure 1. Representation of topic with multiple partitions](images/kafkaPartitions.png) [@www-kafkaGuide].
   
-There are two users of the kafka system. They are producers and consumers. Producers sends the messages and they are also known as publishers. producers while sending the messages does not care about the partition the message is going to save. However, publishing the message with a key value ensures all the messages with same key stored in the same partition. On the other hand consumers consumes those messages by the producers.The consumers saves the offset of each message it reads and process the same. Saving the offset helps restarting from the point of failure in case of an issue rather starting all over again. These consumers can be grouped together called as consumer group and each consumer in the consumer group could be hosted in a different machine which makes the consumer aspect scale horizontally. Consumer groups also restricts the partition to be read by multiple consumers if required. The data retention in each partition can be controlled in different ways. For example the message in a partition can be removed after 1 month or the partition can always be maintained at the capacity threshold set to 1 GB. 
+There are two users of the kafka system. They are producers and consumers. Producers sends the messages and they are also known as publishers. producers while sending the messages does not care about the partition the message is going to save. However, publishing the message with a key value ensures all the messages with same key stored in the same partition. On the other hand consumers consumes those messages by the producers.The consumers saves the offset of each message it reads and process the same. Saving the offset helps restarting from the point of failure in case of an issue rather starting all over again. These consumers can be grouped together called as consumer group and each consumer in the consumer group could be hosted in a different machine which makes the consumer aspect scale horizontally. Consumer groups also restricts the partition to be read by multiple consumers if required. The data retention in each partition can be controlled in different ways. For example the message in a partition can be removed after one month or the partition can always be maintained at the capacity threshold set to 1 GB. Figure 2 illustrates the consumer group reading from a kafka topic.
 
 ![Figure 2. A consumer group reading from a topic](images/kafkaConsumerGroup.png) [@www-kafkaGuide].
   
-A single kafka server is called as kafka broker. Each broker receives messages from producers and save them into thier respective partitions. The broker also responds to the consumer requests and saves the offset of the consumed messages. Kafka is designed to have multiple brokers and collection of all such brokers is called as kafka cluster. A leader broker can be defined in each cluster and the data replicates from leader broker to the other brokers to provide high data availability and persistent data. Kafa also supports the communication between the clusters in different data centers.
+A single kafka server is called as kafka broker. Each broker receives messages from producers and save them into their respective partitions. The broker also responds to the consumer requests and saves the offset of the consumed messages. Kafka is designed to have multiple brokers and collection of all such brokers is called as kafka cluster. A leader broker can be defined in each cluster and the data replicates from leader broker to the other brokers to provide high data availability and persistent data. Kafa also supports the communication between the clusters in different data centers. Figure 3 provides us with the representation of partitions in a kafka cluster.
 
 ![Figure 3. Representation of partitions in a cluster](images/kafkaBrokers.png) [@www-kafkaGuide].
   
@@ -55,7 +55,7 @@ A Credit reporting agency would like to create an application to help their cust
 
 Upon collecting the above information from the user, the below rules need to be applied to cleanse and standardize the user input.
 
-* None of the name related information should contain any integers in them. They should be only characters.
+* None of the name related information should contain any integers in them. They should contain only characters.
 * Address lines should be standardized such as Lane to Ln and Circle to Cir.
 * City and State should be characters.
 * Zip code has to be integer.
@@ -68,14 +68,14 @@ After cleansing and standardizing the user input, below logic has to be applied 
 * Existence of a public record should result 200 point reduction
 * Every missed payment will result in 100 point reduction
 * If the available credit to total debt ratio is less than 10%, there will not be any reduction in score
-* If the available credit to total debt ratio is between 10% to 20% , there will  be 20 point reduction in score
-* If the available credit to total debt ratio is between 20% to 30% , there will  be 30 point reduction in score
-* If the available credit to total debt ratio is between 30% to 40% , there will  be 40 point reduction in score
-* If the available credit to total debt ratio is between 40% to 50% , there will  be 50 point reduction in score
-* If the available credit to total debt ratio is greater than 50% , there will  be 100 point reduction in score
+* If the available credit to total debt ratio is between 10% to 20% , there will be a 20 point reduction in score
+* If the available credit to total debt ratio is between 20% to 30% , there will be a 30 point reduction in score
+* If the available credit to total debt ratio is between 30% to 40% , there will be a 40 point reduction in score
+* If the available credit to total debt ratio is between 40% to 50% , there will be a 50 point reduction in score
+* If the available credit to total debt ratio is greater than 50% , there will be a 100 point reduction in score
 * The minimum score that one can get is 350.
 
-The application has to designed in such a way that the code can be packaged and implemented in any machine. The services has to be light weighted and autonomous in nature. In case of any issue with the code the user inputs must be guarded and the application should start from the last point of failure. An efficient logging mechanism should be in place for supporting the application.
+The application has to designed in such a way that the code can be packaged and implemented in any machine. The services has to be light weighted and autonomous in nature. In case of any issue with the code the user inputs must be guarded and the application should start from the last point of failure.
 
 
 ## Architecture 
@@ -84,7 +84,7 @@ The application is designed using below technologies:
 
 * Kafka: Kafka is used as a message streaming tool for establishing a data pipeline between multiple microservices.
 
-* Python: Python is the programming language used for creating the microservices and kafka library are used to publish and subscribe messages to kafka clusters. Tkinter library is used for creating user interfaces.
+* Python: Python is the programming language used for creating the microservices and kafka library is used to publish and subscribe messages to kafka clusters. Tkinter library is used for creating user interfaces.
 
 * Zookeeper: Zookeeper is used for maintaining a centralized configuration information by providing distributed synchronization and providing group services. Apache kafka uses zookeeper for maintaining the configurations.
 
