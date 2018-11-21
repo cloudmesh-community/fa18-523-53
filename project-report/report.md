@@ -4,7 +4,7 @@
 | ckakara@iu.edu
 | Indiana University
 | hid: fa18-523-53
-| github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-53/project-report/report.md)
+| github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-53/blob/master/project-report/report.md)
 | code: [:cloud:](https://github.com/cloudmesh-community/fa18-523-53/project-code)
 
 
