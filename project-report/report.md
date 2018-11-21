@@ -186,4 +186,5 @@ This command opens a user interface to key in the personal identification inform
 This project successfully demonstrates the orchestration of microservices using a kafka cluster. The four microservices created in python as part of this credit scoring application interacts with one another using kafka cluster. The project also successfully demonstrates the persistence of data in a kafka cluster for the consumers to request.
 
 ## Acknowledgement
+
 The author would like to thank Professor Gregor von Laszewski and associate instructors for their help and guidance.
