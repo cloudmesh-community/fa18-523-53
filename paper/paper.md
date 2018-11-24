@@ -71,9 +71,6 @@ bin/kafka-server-start.sh config/server.properties
 
 Kafka was primarily built in LinkedIn to optimize their activity logging system that has multiple Microservices. When the user does an action from the frontend, messages streams through the kafka cluster which are then subscribed by the backend consumer process. Kafka is also used in organizations for collecting the logs and metrics from their microservices. Since Kafka is analogous to the commit log in databases, it can be used to monitor the databases as an event occurs. Kafka is also used in the applications which are developed to process data in streams.
 
-## Conclusion
-
-Microservices contribute a lot to the organizations especially the ones follow Agile methodology and it's very crucial to understand the data pipeline between these Microservices. Kafka helps in creating an efficient messaging system that helps Microservices interact with one another in a sophisticated manner. 
 
 ## Acknowledgement
 
