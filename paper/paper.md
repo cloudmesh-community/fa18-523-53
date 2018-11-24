@@ -1,4 +1,4 @@
-# Microservices and Kafka :wave: fa18-523-53
+# Microservices and Kafka :hand: fa18-523-53
 
 | Chaitanya Kakarala
 | ckakara@iu.edu
