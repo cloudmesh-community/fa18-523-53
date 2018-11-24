@@ -5,7 +5,7 @@
 | Indiana University
 | hid: fa18-523-53
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-53/blob/master/project-report/report.md)
-| code: [:cloud:](https://github.com/cloudmesh-community/fa18-523-53/project-code)
+| code: [:cloud:](https://github.com/cloudmesh-community/fa18-523-53/tree/master/project-code)
 
 
 ---
