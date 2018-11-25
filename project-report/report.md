@@ -146,6 +146,9 @@ JAVA_MAJOR_VERSION=$($JAVA -version 2>&1 | sed -E -n 's/.* version "([^.-]*).*/\
   * re
   * kafka
   * tkinter
+  * tk_tools
+  * datetime
+  * time
 
 A python library can be installed using pip install commands. Here is the example command line to install kafka library
 ```
