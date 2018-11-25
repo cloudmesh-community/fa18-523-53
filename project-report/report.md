@@ -24,7 +24,7 @@ With the increase in the amount of data being processed there is a great need of
 
 ## Apache Kafka
 
-Apache Kafka is an open source streaming platform that streams the data in the form of messages. The messages are nothing but a collection of bytes and kafka has nothing to do with the content of these messages. Each of these messages will be tagged with a topic name and these messages will be published into a partition (disk space) of the topic it is associated with. These partitions can be made available across different machines which makes kafka a horizontally scalable streaming platform.
+Apache Kafka[@www-kafka] is an open source streaming platform that streams the data in the form of messages. The messages are nothing but a collection of bytes and kafka has nothing to do with the content of these messages. Each of these messages will be tagged with a topic name and these messages will be published into a partition (disk space) of the topic it is associated with. These partitions can be made available across different machines which makes kafka a horizontally scalable streaming platform.
 Optionally each of these messages can be given with a key and whose hash values determines the partition it should be saved in. Hence the messages with the same key value will be stacked together in the same partition. Figure 1 describes the representation of a kafka topic with multiple partitions.
 
 ![Figure 1. Representation of topic with multiple partitions](images/kafkaPartitions.png){#Figure1: Representation of topic with multiple partitions}[@www-kafkaGuide].
