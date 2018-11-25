@@ -130,7 +130,7 @@ A credit database file in csv format is created for this project. Below are the 
 ## Implementation
 
 * Kafka Installation: 
-  * Kafka tar file can be obtained from [here](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz). Please download and save it on the server. Please be aware that kafka requires Java to be installed on the server.
+  * Kafka tar file can be obtained from [@www-kafka-download]. Please download and save it on the server. Please be aware that kafka requires Java to be installed on the server.
   * Untar the downloaded file using below commands
   ```
   tar -xzf kafka_2.11-1.1.0.tgz
