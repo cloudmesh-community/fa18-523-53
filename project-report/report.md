@@ -187,11 +187,15 @@ bin/kafka-server-start.sh config/server.properties
 
 This command opens a user interface to key in the personal identification information. Provide the details and hit "Check your Score" button. Figure 6 is the sample input screen.
 
-![Figure 6. Scoring Application User Interface](images/scoringInputUI.png) {#Figure6: Scoring Application User Interface}
+![Figure 6. Scoring Application User Interface](images/scoringInputUI.png) 
+
+{#Figure6: Scoring Application User Interface}
 
 If the SSN provided in the user input does not found in 'creditDatabase.csv' dataset then you will see a "Credit Record Not Found" exception. If not, a user interface similar to Figure 7 will be opened with the credit information.
 
-![Figure 7. Scoring Application Results Interface](images/scoringResultsUI.png) {#Figure7: Scoring Application Results Screen}
+![Figure 7. Scoring Application Results Interface](images/scoringResultsUI.png) 
+
+{#Figure7: Scoring Application Results Screen}
 
 
 ## Conclusion
