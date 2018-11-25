@@ -96,7 +96,9 @@ The application is designed using below technologies:
 
 Figure 4 describes the high level Kafka Architecture
 
-![Figure 4. Kafka Architecture](images/kafkaArchitecture.png) {#Figure4: Kafka Architecture}
+![Figure 4. Kafka Architecture](images/kafkaArchitecture.png) 
+
+{#Figure4: Kafka Architecture}
 
 ## Design
 
@@ -111,7 +113,9 @@ An application is designed to have different services in python which interacts 
 * scoringMicroService: This microservice consumes the messages from 'scoring' topic from kafka cluster and applies scoring logic on the subject. This service reads the dataset called 'creditDatabase.csv' for obtaining the required attributes for a given SSN to calculate the score. The service then launches the user interface for the user to check his score and the factors contributing towards the same. 
 Figure 5 describes how the above stated microservices are orchestrated in Kafka.
 
-![Figure 5. Scoring Application Design](images/scoringApplicationDesign.png) {#Figure5: Scoring Application Design}
+![Figure 5. Scoring Application Design](images/scoringApplicationDesign.png)
+
+{#Figure5: Scoring Application Design}
   
 Zookeeper saves the offsets of the messages consumed and produced to maintain the configuration information. Kafka requires this information in the event of restarting the application from a point of failure.
 
