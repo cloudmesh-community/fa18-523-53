@@ -190,7 +190,7 @@ If the SSN provided in the user input does not found in 'creditDatabase.csv' dat
 
 ## Conclusion
 
-This project successfully demonstrates the orchestration of microservices using a kafka cluster. The four microservices created in python as part of this credit scoring application interacts with one another using kafka cluster. The project also successfully demonstrates the persistence of data in a kafka cluster for the consumers to request.
+This project successfully demonstrates the orchestration of microservices using a kafka cluster. The four microservices created in python as part of this credit scoring application interacts with one another using kafka cluster. 
 
 ## Acknowledgement
 
