@@ -25,16 +25,16 @@ The unit of data within Kafka is message. These messages are nothing but an arra
 Messages in Kafka are classified into Topics. Topics are nothing but a group of partitions (Can also be described as disk space) where a collection of similar messages are stored. Messages will be appended to these partitions and will be read from beginning to end fashion. The Partitions can be hosted by different servers which makes the topic scale horizontally.
 All the partitions for a topic is often termed as Stream. Figure 1 describes four partitions of a single topic.
 
-![Figure 1. Representation of topic with multiple partitions](images/kafkaPartitions.png){#Figure1: Representation of topic with multiple partitions}[@www-kafkaGuide]
+![Figure 1. Representation of topic with multiple partitions[@www-kafkaGuide]](images/kafkaPartitions.png){#Figure1: Representation of topic with multiple partitions}[@www-kafkaGuide]
 
 There are basically two users of Kafka system. They are Producers and Consumers. Producers create messages to a specific topic. Producers are also termed as publishers. Producers by default does not care which partition they are writing the message to. However, in some cases the hash value of the key decided the partition and ensures all the messages for the same key reside in the same partition. Consumers read messages from the partitions in the order they were published by the producers. Consumers are also termed as subscribers. While reading the messages from partitions, consumers store the offset to to keep track of the read messages. By storing the offset, the system can be re-strated from the point of failure without starting all over again. Consumers are bundled together as a consumer group that restricts a given partition to be read by a unique consumer. Consumer groups helps scaling the consumers horizontally. Figure 2 illustrates on how consumer group works.
 
-![Figure 2. A consumer group reading from a topic](images/kafkaConsumerGroup.png){#Figure2: A Consumer group reading from a topic}[@www-kafkaGuide]
+![Figure 2. A consumer group reading from a topic[@www-kafkaGuide]](images/kafkaConsumerGroup.png){#Figure2: A Consumer group reading from a topic}[@www-kafkaGuide]
 
 A single kafka server is called as Broker. Each broker receives messages from producers and write them to the partitions on the disk. They will then save the offset for each message in a partition They also respond to the consumer programs for data requests from partitions and commit the same. Kafka is designed to have multiple brokers and collection of all of them is termed as a Kafka cluster. Each cluster can have multiple brokers where the leader broker replicates the data to others. Replication of data helps in durability of data even when one of the broker failed working. Figure 3 explains how multiple brokers are replicated in a kafka cluster.
 
 
-![Figure 3. Representation of partitions in a cluster](images/kafkaBrokers.png){#Figure3: Representation of partitions in a cluster}[@www-kafkaGuide]
+![Figure 3. Representation of partitions in a cluster[@www-kafkaGuide]](images/kafkaBrokers.png){#Figure3: Representation of partitions in a cluster}[@www-kafkaGuide]
 
 The major aspect of kafka is the data retention in the partitions. By default the messages in the partitions will be retained for a period of time or Size. For example, the messages in a topic can be retained for one week or until the partition reaches 1 GB. The default behavior can be overridden for topics by changing their settings. Kafka also supports multiple clusters communicating across multiple data centers.
 
