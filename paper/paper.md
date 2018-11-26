@@ -6,6 +6,9 @@
 | hid: fa18-523-53
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-53/blob/master/paper/paper.md)
 
+
+:o: refernces missing
+
 ---
 
 Keywords: fa18-523-53, Microservices, Kafka, Python
