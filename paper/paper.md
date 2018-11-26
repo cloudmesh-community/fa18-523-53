@@ -7,7 +7,7 @@
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-53/blob/master/paper/paper.md)
 
 
-:o: refernces missing
+:o: refernces  missing
 
 ---
 
