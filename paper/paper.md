@@ -11,6 +11,8 @@
 
 :o: please read our example how to do figures 
 
+:o: figure labels must not have spaces in them
+
 ---
 
 Keywords: fa18-523-53, Microservices, Kafka, Python
@@ -30,7 +32,7 @@ The unit of data within Kafka is message. These messages are nothing but an arra
 Messages in Kafka are classified into Topics. Topics are nothing but a group of partitions (Can also be described as disk space) where a collection of similar messages are stored. Messages will be appended to these partitions and will be read from beginning to end fashion. The Partitions can be hosted by different servers which makes the topic scale horizontally.
 All the partitions for a topic is often termed as Stream. +@fig:Representation of topic with multiple partitions[@www-kafkaGuide] describes four partitions of a single topic.
 
-![Representation of topic with multiple partitions[@www-kafkaGuide]](images/kafkaPartitions.png){#Figure1: Representation of topic with multiple partitions}[@www-kafkaGuide]
+![Representation of topic with multiple partitions[@www-kafkaGuide]](images/kafkaPartitions.png){#Figure1: Representation of topic with multiple partitions}
 
 There are basically two users of Kafka system. They are Producers and Consumers. Producers create messages to a specific topic. Producers are also termed as publishers. Producers by default does not care which partition they are writing the message to. However, in some cases the hash value of the key decided the partition and ensures all the messages for the same key reside in the same partition. Consumers read messages from the partitions in the order they were published by the producers. Consumers are also termed as subscribers. While reading the messages from partitions, consumers store the offset to to keep track of the read messages. By storing the offset, the system can be re-strated from the point of failure without starting all over again. Consumers are bundled together as a consumer group that restricts a given partition to be read by a unique consumer. Consumer groups helps scaling the consumers horizontally. +@fig:A consumer group reading from a topic[@www-kafkaGuide] illustrates on how consumer group works.
 
