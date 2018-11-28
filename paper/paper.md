@@ -7,12 +7,6 @@
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-53/blob/master/paper/paper.md)
 
 
-:o: refernces  missing
-
-:o: please read our example how to do figures 
-
-:o: figure labels must not have spaces in them
-
 ---
 
 Keywords: fa18-523-53, Microservices, Kafka, Python
@@ -39,7 +33,6 @@ There are basically two users of Kafka system. They are Producers and Consumers.
 ![A consumer group reading from a topic[@www-kafkaGuide]](images/kafkaConsumerGroup.png){#fig2:kafkaConsumerGroup}
 
 A single kafka server is called as Broker. Each broker receives messages from producers and write them to the partitions on the disk. They will then save the offset for each message in a partition They also respond to the consumer programs for data requests from partitions and commit the same. Kafka is designed to have multiple brokers and collection of all of them is termed as a Kafka cluster. Each cluster can have multiple brokers where the leader broker replicates the data to others. Replication of data helps in durability of data even when one of the broker failed working. +@fig3:kafkaCluster[@www-kafkaGuide] explains how multiple brokers are replicated in a kafka cluster.
-
 
 ![Representation of partitions in a cluster[@www-kafkaGuide]](images/kafkaBrokers.png){#fig3:kafkaCluster}
 
