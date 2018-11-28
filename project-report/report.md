@@ -25,23 +25,17 @@ With the increase in the amount of data being processed there is a great need of
 ## Apache Kafka
 
 Apache Kafka [@www-kafka] is an open source streaming platform that streams the data in the form of messages. The messages are nothing but a collection of bytes and kafka has nothing to do with the content of these messages. Each of these messages will be tagged with a topic name and these messages will be published into a partition (disk space) of the topic it is associated with. These partitions can be made available across different machines which makes kafka a horizontally scalable streaming platform.
-Optionally each of these messages can be given with a key and whose hash values determines the partition it should be saved in. Hence the messages with the same key value will be stacked together in the same partition. +@fig:Representation of topic with multiple partitions [@www-kafkaGuide] describes the representation of a kafka topic with multiple partitions.
+Optionally each of these messages can be given with a key and whose hash values determines the partition it should be saved in. Hence the messages with the same key value will be stacked together in the same partition. +@fig1:topicWithMultiplePartitions[@www-kafkaGuide] describes four partitions of a single topic.
 
-![Figure 1. Representation of topic with multiple partitions [@www-kafkaGuide]](images/kafkaPartitions.png)
-
-{#Figure1: Representation of topic with multiple partitions} [@www-kafkaGuide].
+![Representation of topic with multiple partitions[@www-kafkaGuide]](images/kafkaPartitions.png){#fig1:topicWithMultiplePartitions}.
   
-There are two users of the kafka system. They are producers and consumers. Producers sends the messages and they are also known as publishers. producers while sending the messages does not care about the partition the message is going to save. However, publishing the message with a key value ensures all the messages with same key stored in the same partition. On the other hand consumers consumes those messages by the producers.The consumers saves the offset of each message it reads and process the same. Saving the offset helps restarting from the point of failure in case of an issue rather starting all over again. These consumers can be grouped together called as consumer group and each consumer in the consumer group could be hosted in a different machine which makes the consumer aspect scale horizontally. Consumer groups also restricts the partition to be read by multiple consumers if required. The data retention in each partition can be controlled in different ways. For example the message in a partition can be removed after one month or the partition can always be maintained at the capacity threshold set to 1 GB. +@fig:A consumer group reading from a topic [@www-kafkaGuide] illustrates the consumer group reading from a kafka topic.
+There are two users of the kafka system. They are producers and consumers. Producers sends the messages and they are also known as publishers. producers while sending the messages does not care about the partition the message is going to save. However, publishing the message with a key value ensures all the messages with same key stored in the same partition. On the other hand consumers consumes those messages by the producers.The consumers saves the offset of each message it reads and process the same. Saving the offset helps restarting from the point of failure in case of an issue rather starting all over again. These consumers can be grouped together called as consumer group and each consumer in the consumer group could be hosted in a different machine which makes the consumer aspect scale horizontally. Consumer groups also restricts the partition to be read by multiple consumers if required. The data retention in each partition can be controlled in different ways. For example the message in a partition can be removed after one month or the partition can always be maintained at the capacity threshold set to 1 GB. +@fig2:kafkaConsumerGroup[@www-kafkaGuide] illustrates on how consumer group works.
 
-![Figure 2. A consumer group reading from a topic [@www-kafkaGuide]](images/kafkaConsumerGroup.png)
-
-{#Figure2: A Consumer group reading from a topic} [@www-kafkaGuide].
+![A consumer group reading from a topic[@www-kafkaGuide]](images/kafkaConsumerGroup.png){#fig2:kafkaConsumerGroup}.
   
-A single kafka server is called as kafka broker. Each broker receives messages from producers and save them into their respective partitions. The broker also responds to the consumer requests and saves the offset of the consumed messages. Kafka is designed to have multiple brokers and collection of all such brokers is called as kafka cluster. A leader broker can be defined in each cluster and the data replicates from leader broker to the other brokers to provide high data availability and persistent data. Kafa also supports the communication between the clusters in different data centers. +@fig:Representation of partitions in a cluster [@www-kafkaGuide] provides us with the representation of partitions in a kafka cluster.
+A single kafka server is called as kafka broker. Each broker receives messages from producers and save them into their respective partitions. The broker also responds to the consumer requests and saves the offset of the consumed messages. Kafka is designed to have multiple brokers and collection of all such brokers is called as kafka cluster. A leader broker can be defined in each cluster and the data replicates from leader broker to the other brokers to provide high data availability and persistent data. Kafa also supports the communication between the clusters in different data centers. +@fig3:kafkaCluster[@www-kafkaGuide] explains how multiple brokers are replicated in a kafka cluster.
 
-![Figure 3. Representation of partitions in a cluster [@www-kafkaGuide]](images/kafkaBrokers.png)
-
-{#Figure3: Representation of partitions in a cluster} [@www-kafkaGuide].
+![Representation of partitions in a cluster[@www-kafkaGuide]](images/kafkaBrokers.png){#fig3:kafkaCluster}.
   
 ## Requirements
 
@@ -94,11 +88,9 @@ The application is designed using below technologies:
 
 * Zookeeper: Zookeeper is used for maintaining a centralized configuration information by providing distributed synchronization and providing group services. Apache kafka uses zookeeper for maintaining the configurations.
 
-Figure 4 describes the high level Kafka Architecture
++@fig4:kafkaArchitecture describes the high level Kafka Architecture
 
-![Figure 4. Kafka Architecture](images/kafkaArchitecture.png) 
-
-{#Figure4: Kafka Architecture}
+![Figure 4. Kafka Architecture](images/kafkaArchitecture.png) {#fig4:kafkaArchitecture}
 
 ## Design
 
@@ -111,11 +103,9 @@ An application is designed to have different services in python which interacts 
 * addressParsingMicroService: This microservice consumes the messages from 'addressParsing' topic and applies parsing logic on the address related fields to define the parsed address. The service then creates a payload with parsed name and address to kafka partitions under 'scoring' topic.
 
 * scoringMicroService: This microservice consumes the messages from 'scoring' topic from kafka cluster and applies scoring logic on the subject. This service reads the dataset called 'creditDatabase.csv' for obtaining the required attributes for a given SSN to calculate the score. The service then launches the user interface for the user to check his score and the factors contributing towards the same. 
-Figure 5 describes how the above stated microservices are orchestrated in Kafka.
++@fig5:scoringApplicationDesign describes how the above stated microservices are orchestrated in Kafka.
 
-![Figure 5. Scoring Application Design](images/scoringApplicationDesign.png)
-
-{#Figure5: Scoring Application Design}
+![Figure 5. Scoring Application Design](images/scoringApplicationDesign.png) {#fig5:scoringApplicationDesign}
   
 Zookeeper saves the offsets of the messages consumed and produced to maintain the configuration information. Kafka requires this information in the event of restarting the application from a point of failure.
 
@@ -189,17 +179,13 @@ bin/kafka-server-start.sh config/server.properties
 ./scoringUI.py
 ```
 
-This command opens a user interface to key in the personal identification information. Provide the details and hit "Check your Score" button. Figure 6 is the sample input screen.
+This command opens a user interface to key in the personal identification information. Provide the details and hit "Check your Score" button. +@fig6:scoringInputUI is the sample input screen.
 
-![Figure 6. Scoring Application User Interface](images/scoringInputUI.png) 
+![Figure 6. Scoring Application User Interface](images/scoringInputUI.png) {#fig6: scoringInputUI}
 
-{#Figure6: Scoring Application User Interface}
+If the SSN provided in the user input does not found in 'creditDatabase.csv' dataset then you will see a "Credit Record Not Found" exception. If not, a user interface similar to +@fig7:scoringResultsUI will be opened with the credit information.
 
-If the SSN provided in the user input does not found in 'creditDatabase.csv' dataset then you will see a "Credit Record Not Found" exception. If not, a user interface similar to Figure 7 will be opened with the credit information.
-
-![Figure 7. Scoring Application Results Interface](images/scoringResultsUI.png) 
-
-{#Figure7: Scoring Application Results Screen}
+![Figure 7. Scoring Application Results Interface](images/scoringResultsUI.png) {#fig7:scoringResultsUI}
 
 
 ## Conclusion
