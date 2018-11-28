@@ -90,7 +90,7 @@ The application is designed using below technologies:
 
 +@fig4:kafkaArchitecture describes the high level Kafka Architecture
 
-![Figure 4. Kafka Architecture](images/kafkaArchitecture.png) {#fig4:kafkaArchitecture}
+![Kafka Architecture](images/kafkaArchitecture.png) {#fig4:kafkaArchitecture}
 
 ## Design
 
@@ -105,7 +105,7 @@ An application is designed to have different services in python which interacts 
 * scoringMicroService: This microservice consumes the messages from 'scoring' topic from kafka cluster and applies scoring logic on the subject. This service reads the dataset called 'creditDatabase.csv' for obtaining the required attributes for a given SSN to calculate the score. The service then launches the user interface for the user to check his score and the factors contributing towards the same. 
 +@fig5:scoringApplicationDesign describes how the above stated microservices are orchestrated in Kafka.
 
-![Figure 5. Scoring Application Design](images/scoringApplicationDesign.png) {#fig5:scoringApplicationDesign}
+![Scoring Application Design](images/scoringApplicationDesign.png) {#fig5:scoringApplicationDesign}
   
 Zookeeper saves the offsets of the messages consumed and produced to maintain the configuration information. Kafka requires this information in the event of restarting the application from a point of failure.
 
@@ -181,11 +181,11 @@ bin/kafka-server-start.sh config/server.properties
 
 This command opens a user interface to key in the personal identification information. Provide the details and hit "Check your Score" button. +@fig6:scoringInputUI is the sample input screen.
 
-![Figure 6. Scoring Application User Interface](images/scoringInputUI.png) {#fig6: scoringInputUI}
+![Scoring Application User Interface](images/scoringInputUI.png) {#fig6: scoringInputUI}
 
 If the SSN provided in the user input does not found in 'creditDatabase.csv' dataset then you will see a "Credit Record Not Found" exception. If not, a user interface similar to +@fig7:scoringResultsUI will be opened with the credit information.
 
-![Figure 7. Scoring Application Results Interface](images/scoringResultsUI.png) {#fig7:scoringResultsUI}
+![Scoring Application Results Interface](images/scoringResultsUI.png) {#fig7:scoringResultsUI}
 
 
 ## Conclusion
