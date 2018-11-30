@@ -183,7 +183,7 @@ This command opens a user interface to key in the personal identification inform
 
 ![Scoring Application User Interface](images/scoringInputUI.png){#fig:scoringInputUI}
 
-If the SSN provided in the user input does not found in 'creditDatabase.csv' dataset then you will see a "Credit Record Not Found" exception. If not, a user interface similar to +@fig7:scoringResultsUI will be opened with the credit information.
+If the SSN provided in the user input does not found in 'creditDatabase.csv' dataset then you will see a "Credit Record Not Found" exception. If not, a user interface similar to +@fig:scoringResultsUI will be opened with the credit information.
 
 ![Scoring Application Results Interface](images/scoringResultsUI.png){#fig:scoringResultsUI}
 
