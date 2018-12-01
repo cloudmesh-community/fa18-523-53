@@ -31,11 +31,11 @@ Optionally each of these messages can be given with a key and whose hash values 
   
 There are two users of the kafka system. They are producers and consumers. Producers sends the messages and they are also known as publishers. producers while sending the messages does not care about the partition the message is going to save. However, publishing the message with a key value ensures all the messages with same key stored in the same partition. On the other hand consumers consumes those messages by the producers.The consumers saves the offset of each message it reads and process the same. Saving the offset helps restarting from the point of failure in case of an issue rather starting all over again. These consumers can be grouped together called as consumer group and each consumer in the consumer group could be hosted in a different machine which makes the consumer aspect scale horizontally. Consumer groups also restricts the partition to be read by multiple consumers if required. The data retention in each partition can be controlled in different ways. For example the message in a partition can be removed after one month or the partition can always be maintained at the capacity threshold set to 1 GB. +@fig:kafkaConsumerGroup illustrates on how consumer group works.
 
-![A consumer group reading from a topic [@www-kafkaGuide].](images/kafkaConsumerGroup.png){#fig:kafkaConsumerGroup}.
+![A consumer group reading from a topic [@www-kafkaGuide].](images/kafkaConsumerGroup.png){#fig:kafkaConsumerGroup}
   
 A single kafka server is called as kafka broker. Each broker receives messages from producers and save them into their respective partitions. The broker also responds to the consumer requests and saves the offset of the consumed messages. Kafka is designed to have multiple brokers and collection of all such brokers is called as kafka cluster. A leader broker can be defined in each cluster and the data replicates from leader broker to the other brokers to provide high data availability and persistent data. Kafa also supports the communication between the clusters in different data centers. +@fig:kafkaCluster explains how multiple brokers are replicated in a kafka cluster.
 
-![Representation of partitions in a cluster [@www-kafkaGuide].](images/kafkaBrokers.png){#fig:kafkaCluster}.
+![Representation of partitions in a cluster [@www-kafkaGuide].](images/kafkaBrokers.png){#fig:kafkaCluster}
   
 ## Requirements
 
