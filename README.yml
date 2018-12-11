@@ -9,22 +9,26 @@ owner:
 
 Notebook:
   - url: https://github.com/cloudmesh-community/fa18-523-53/blob/master/notebook.md 
+  - Status: 1
   
 Technologies:
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/google-chubby.md
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/pbdr.md
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/solr.md
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/crunch.md
+  - Status: 1
   
 Paper:
   - keyword: Microservices, Kafka
     title: Microservices and Kafka
+    Status: 1
     url: https://github.com/cloudmesh-community/fa18-523-53/tree/master/paper/paper.md
     group: fa18-523-53
     
 Project:
   - keyword: Microservices, Kafka, Zookeper
     title: Orchestrating Microservices for Credit Scoring Application using Kafka.
+    Status: 1
     url: https://github.com/cloudmesh-community/fa18-523-53/tree/master/project-report/report.md
     group: fa18-523-53
     code: https://github.com/cloudmesh-community/fa18-523-53/tree/master/project-code
