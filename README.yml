@@ -1,10 +1,11 @@
 ---
 owner:
-  firstname: "Chaitanya"
-  lastname: "Kakarala"
-  hid: "fa18-523-53"
-  community: "i523"
-  semester: fa18
+  Firstname: "Chaitanya"
+  Lastname: "Kakarala"
+  HID: "fa18-523-53"
+  Semester: fa18
+  Course: "i523"
+  Online: Yes
   Profile: https://github.com/cloudmesh-community/fa18-523-53
 technologies:
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/google-chubby.md
