@@ -1,4 +1,4 @@
-# Orchestrating Microservices for a Credit Scoring Application in Kafka  :hand:  fa18-523-53
+# Orchestrating Microservices for a Credit Scoring Application in Kafka
 
 | Chaitanya Kakarala
 | ckakara@iu.edu
