@@ -1,4 +1,4 @@
-# Microservices and Kafka :hand: fa18-523-53
+# Microservices and Kafka
 
 | Chaitanya Kakarala
 | ckakara@iu.edu
@@ -9,7 +9,7 @@
 
 ---
 
-Keywords: fa18-523-53, Microservices, Kafka, Python
+Keywords: Microservices, Kafka, Python
 
 ---
 
